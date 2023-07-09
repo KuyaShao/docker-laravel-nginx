@@ -6,6 +6,7 @@ ARG GID
 ENV UID=${UID}
 ENV GID=${GID}
 
+RUN chown -R www-data:www-data /var/www
 RUN mkdir -p /var/www/html
 
 WORKDIR /var/www/html
