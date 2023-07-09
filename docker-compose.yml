@@ -6,7 +6,7 @@ networks:
     ipam: 
       driver: default
       config: 
-          - subnet: 172.50.17.0/16
+          - subnet: 172.50.17.0/24
 
 services:
   frontend-dev:
