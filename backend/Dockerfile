@@ -6,7 +6,7 @@ ARG GID
 ENV UID=${UID}
 ENV GID=${GID}
 
-RUN chown -R www-data:www-data /var/www
+
 RUN mkdir -p /var/www/html
 
 WORKDIR /var/www/html
@@ -16,7 +16,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 # MacOS staff group's gid is 20, so is the dialout group in alpine linux. We're not using it, let's just remove it.
 RUN delgroup dialout
 
-RUN addgroup -g ${GID} --system laravel
+RUN addgroup -g --gid 1000 --system laravel
 RUN adduser -G laravel --system -D -s /bin/sh -u ${UID} laravel
 
 RUN sed -i "s/user = www-data/user = laravel/g" /usr/local/etc/php-fpm.d/www.conf
