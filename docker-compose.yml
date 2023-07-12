@@ -16,7 +16,8 @@ services:
       - "8025:8025"
     restart: unless-stopped
     networks:
-      - database_cluster_cws
+      database_cluster_cws: 
+        ipv4_address: 172.21.0.3
 
   backend-dev:
     container_name: backend-laravel
@@ -30,7 +31,8 @@ services:
       - ./backend/laravel-app:/var/www/html:delegated
     restart: unless-stopped
     networks:
-      - database_cluster_cws
+      database_cluster_cws: 
+        ipv4_address: 172.21.0.4
 
   web-server:
     container_name: webserver-nginx
@@ -49,5 +51,6 @@ services:
       - backend-dev
     restart: unless-stopped
     networks:
-      - database_cluster_cws
+      database_cluster_cws: 
+        ipv4_address: 172.21.0.5
 
