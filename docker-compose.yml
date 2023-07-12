@@ -2,6 +2,7 @@ version: "3.3"
 
 networks:
   web-app:
+    external: true
 
 services:
   frontend-dev:
