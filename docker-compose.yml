@@ -12,8 +12,6 @@ services:
       dockerfile: ./frontend/Dockerfile
     volumes:
       - ./frontend/react-app:/app
-    ports:
-      - "8025:8025"
     restart: unless-stopped
     networks:
       database_cluster_cws: 
