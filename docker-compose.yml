@@ -49,6 +49,7 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - backend-dev
+      - frontend-dev
     restart: unless-stopped
     networks:
       database_cluster_cws: 
