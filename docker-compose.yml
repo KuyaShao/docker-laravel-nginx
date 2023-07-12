@@ -1,9 +1,8 @@
 version: "3.3"
 
 networks:
-  default: 
-    external: 
-      name: cws 
+  docker-laravel-nginx_web-app:
+    external: true
 
 services:
   frontend-dev:
@@ -17,7 +16,7 @@ services:
       - "8025:8025"
     restart: unless-stopped
     networks:
-      - cws 
+      - docker-laravel-nginx_web-app
 
   backend-dev:
     container_name: backend-laravel
@@ -31,7 +30,7 @@ services:
       - ./backend/laravel-app:/var/www/html:delegated
     restart: unless-stopped
     networks:
-      - cws
+      - docker-laravel-nginx_web-app
 
   web-server:
     container_name: webserver-nginx
@@ -50,5 +49,5 @@ services:
       - backend-dev
     restart: unless-stopped
     networks:
-      - cws
+      - docker-laravel-nginx_web-app
 
