@@ -17,7 +17,7 @@ services:
     restart: unless-stopped
     networks:
       database_cluster_cws: 
-        ipv4_address: 172.21.0.3
+        ipv4_address: 172.21.0.4
 
   backend-dev:
     container_name: backend-laravel
@@ -32,7 +32,7 @@ services:
     restart: unless-stopped
     networks:
       database_cluster_cws: 
-        ipv4_address: 172.21.0.4
+        ipv4_address: 172.21.0.5
 
   web-server:
     container_name: webserver-nginx
@@ -52,5 +52,5 @@ services:
     restart: unless-stopped
     networks:
       database_cluster_cws: 
-        ipv4_address: 172.21.0.5
+        ipv4_address: 172.21.0.6
 
