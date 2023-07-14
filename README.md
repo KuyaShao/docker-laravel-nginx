@@ -24,18 +24,10 @@ to install Make file in MacOs and in Linux just open the terminal and type sudo 
 ## How to install Docker Laravel Nginx
 To install Docker Laravel Nginx just clone this app. after you clone this app you need to locate it on your terminal and type make setup to download and install all the need files in backend and the frontend. #### Just In Case that docker gets you error in the part in the front end. to fix just type cd frontend/react-app and type npm install
 
-## How to open Mysql Database
-to open mysql database just open chrome type localhost:9001 after that you need to follow this instructions
-
-- login using this credentials 
-    - username: root
-    - password: root
 
 ## Ports that has been used 
 All ports that has been used in this app
 
-- 9001 = phpmyadmin
-- 3006 = mysql
 - 8085 = nginx
 - 8026 = react app/frontend
 - 9000 = laravel app/backend
