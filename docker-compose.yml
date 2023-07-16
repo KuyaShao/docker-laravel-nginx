@@ -13,8 +13,7 @@ services:
       - ./frontend/react-app:/app
     ports:
       - "8025:8025"
-    restart:
-      - unless-stopped
+    restart: unless-stopped
     networks:
       - web-app
 
@@ -28,8 +27,7 @@ services:
         - GID=${GID:-1000}
     volumes:
       - ./backend/laravel-app:/var/www/html:delegated
-    restart:
-      - unless-stopped
+    restart: unless-stopped
     networks:
       - web-app
 
@@ -49,8 +47,7 @@ services:
     depends_on:
       - backend-dev
       - mysql_db
-    restart:
-      - unless-stopped
+    restart: unless-stopped
     networks:
       - web-app
 
@@ -61,8 +58,7 @@ services:
       MYSQL_DATABASE: web-app
     ports:
       - 3006:3006
-    restart:
-      - unless-stopped
+    restart: unless-stopped
     networks:
       - web-app
 
@@ -72,7 +68,6 @@ services:
       - 9001:80
     environment:
       - PMA_ARBITRARY=1
-    restart:
-      - unless-stopped
+    restart: unless-stopped
     networks:
       - web-app
