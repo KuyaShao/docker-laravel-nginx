@@ -14,4 +14,6 @@ RUN npm install --include=dev
 
 ENTRYPOINT ["/entrypoint.sh"]
 
+
+
 CMD ["npm", "run", "dev"]
