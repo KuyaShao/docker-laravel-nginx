@@ -35,4 +35,4 @@ ENTRYPOINT ["sh","/var/www/html/entrypoint.sh"]
 USER laravel
 
 
-CMD ["php-fpm", "-y", "/usr/local/etc/php-fpm.conf", "-R","run"]
+CMD ["php-fpm", "-y", "/usr/local/etc/php-fpm.conf", "-R"]
